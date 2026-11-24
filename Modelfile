@@ -1,0 +1,13 @@
+# Modelfile de Ollama que usé (abr 2026): qwen2.5 7B, temperatura baja para que no invente
+FROM qwen2.5:7b-instruct
+
+PARAMETER temperature 0.25
+PARAMETER top_p 0.90
+PARAMETER top_k 40
+PARAMETER repeat_penalty 1.15
+PARAMETER num_ctx 8192
+
+SYSTEM """
+Clasificas movimientos bancarios. Responde SOLO con JSON valido.
+Si no estas seguro, responde {"categoria": "desconocido"}. No inventes.
+"""
